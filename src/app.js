@@ -14,4 +14,11 @@ app.use(express.urlencoded({extended:true,limit:"10kb"}))// jo url sub hai wo le
 app.use(express.static("public"))
 app.use(cookieParser())
 
+// routes import
+import userRouter from './routes/user.routes.js'
+
+// routes declaration
+app.use("/api/v1/users",userRouter)
+
+
 export { app }
